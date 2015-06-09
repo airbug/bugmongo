@@ -352,11 +352,17 @@ require('bugpack').context("*", function(bugpack) {
          */
         generateMongooseBasicSchemaProperty: function(schemaProperty) {
             var mongooseSchemaProperty = {
-                index: schemaProperty.isIndexed(),
-                required: schemaProperty.isRequired(),
-                type: this.determineMongooseSchemaPropertyType(schemaProperty),
-                unique: schemaProperty.isUnique()
+                type: this.determineMongooseSchemaPropertyType(schemaProperty)
             };
+            if (schemaProperty.isIndexed()) {
+                mongooseSchemaProperty.index = true;
+            }
+            if (schemaProperty.isRequired()) {
+                mongooseSchemaProperty.required = true;
+            }
+            if (schemaProperty.isUnique()) {
+                mongooseSchemaProperty.unique = true;
+            }
             if (!TypeUtil.isNull(schemaProperty.getDefault())) {
                 mongooseSchemaProperty.default = schemaProperty.getDefault();
             }

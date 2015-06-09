@@ -15,7 +15,7 @@
 //@Export('bugmongo.DummyFindOneQuery')
 
 //@Require('Class')
-//@Require('mongo.DummyMongoQuery')
+//@Require('bugmongo.DummyMongoQuery')
 
 
 //-------------------------------------------------------------------------------

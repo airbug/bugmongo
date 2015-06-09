@@ -12,7 +12,7 @@
 // Annotations
 //-------------------------------------------------------------------------------
 
-//@Export('mongo.DummyMongooseModel')
+//@Export('bugmongo.DummyMongooseModel')
 
 //@Require('Class')
 //@Require('Obj')

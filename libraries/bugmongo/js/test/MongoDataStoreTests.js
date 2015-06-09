@@ -139,10 +139,7 @@ require('bugpack').context("*", function(bugpack) {
             var mongooseSchema  = mongooseModel.schema;
             var expectedSchemaObject = {
                 testPropertyName: {
-                    index: false,
-                    required: false,
-                    type: String,
-                    unique: false
+                    type: String
                 }
             };
             test.assertEqual(JSON.stringify(mongooseSchema.schemaObject), JSON.stringify(expectedSchemaObject),
