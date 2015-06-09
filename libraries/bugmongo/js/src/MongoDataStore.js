@@ -267,7 +267,7 @@ require('bugpack').context("*", function(bugpack) {
         /**
          * @private
          * @param {SchemaIndex} schemaIndex
-         * @returns {{data: Object, options: {unique: boolean}}}
+         * @return {{data: Object, options: {unique: boolean}}}
          */
         buildMongooseSchemaIndex: function(schemaIndex) {
             return {
@@ -331,7 +331,7 @@ require('bugpack').context("*", function(bugpack) {
         /**
          * @private
          * @param {SchemaProperty} schemaProperty
-         * @returns {{type: *[], index: boolean}}
+         * @return {{type: *[], index: boolean}}
          */
         generateMongooseArraySchemaProperty: function(schemaProperty) {
             if (schemaProperty.getType() === "array") {
@@ -348,7 +348,7 @@ require('bugpack').context("*", function(bugpack) {
         /**
          * @private
          * @param {SchemaProperty} schemaProperty
-         * @returns {{index: boolean, required: boolean, type: *, unique: boolean, default: *}}
+         * @return {{index: boolean, required: boolean, type: *, unique: boolean, default: *}}
          */
         generateMongooseBasicSchemaProperty: function(schemaProperty) {
             var mongooseSchemaProperty = {
@@ -366,7 +366,7 @@ require('bugpack').context("*", function(bugpack) {
         /**
          * @private
          * @param {SchemaProperty} schemaProperty
-         * @returns {{a: {type: *, required: boolean, index: boolean}, b: {type: *, required: boolean, index: boolean}}}
+         * @return {{a: {type: *, required: boolean, index: boolean}, b: {type: *, required: boolean, index: boolean}}}
          */
         generateMongoosePairSchemaProperty: function(schemaProperty) {
             if (schemaProperty.getType() === "Pair") {
@@ -391,7 +391,7 @@ require('bugpack').context("*", function(bugpack) {
         /**
          * @private
          * @param {SchemaProperty} schemaProperty
-         * @returns {{type: *[], index: boolean}}
+         * @return {{type: *[], index: boolean}}
          */
         generateMongooseSetSchemaProperty: function(schemaProperty) {
             if (schemaProperty.getType() === "Set") {
@@ -408,7 +408,7 @@ require('bugpack').context("*", function(bugpack) {
         /**
          * @private
          * @param {SchemaProperty} schemaProperty
-         * @returns {{type: *}}
+         * @return {{type: *}}
          */
         generateMongooseSubDocSchemaProperty: function(schemaProperty) {
             var mongooseSchema      = this.getMongooseSchemaForName(schemaProperty.getType());

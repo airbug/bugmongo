@@ -100,7 +100,7 @@ require('bugpack').context("*", function(bugpack) {
 
         /**
          * @param {string} collectionType
-         * @returns {Object}
+         * @return {Object}
          */
         getCollection: function(collectionType) {
             return this.db[collectionType];

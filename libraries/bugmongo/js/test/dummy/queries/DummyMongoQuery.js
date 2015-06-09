@@ -257,7 +257,7 @@ require('bugpack').context("*", function(bugpack) {
         //-------------------------------------------------------------------------------
 
         /**
-         * @returns {Object}
+         * @return {Object}
          */
         generateId: function() {
             return new DummyMongooseObjectId(UuidGenerator.generateHexUuid());

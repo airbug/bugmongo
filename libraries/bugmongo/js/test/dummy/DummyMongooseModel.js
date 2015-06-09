@@ -153,7 +153,7 @@ require('bugpack').context("*", function(bugpack) {
         /**
          * @param {Object} queryParams
          * @param {function(Error, Object)} callback
-         * @returns {DummyFindQuery}
+         * @return {DummyFindQuery}
          */
         find: function(queryParams, callback) {
             var query = new DummyFindQuery(this, queryParams);
@@ -167,7 +167,7 @@ require('bugpack').context("*", function(bugpack) {
         /**
          * @param {string} id
          * @param {function(Error, Object)} callback
-         * @returns {DummyFindByIdQuery}
+         * @return {DummyFindByIdQuery}
          */
         findById: function(id, callback) {
             var query = new DummyFindByIdQuery(this, id);
@@ -182,7 +182,7 @@ require('bugpack').context("*", function(bugpack) {
          *
          * @param {string} id
          * @param {function(Error)} callback
-         * @returns {DummyFindByIdAndRemoveQuery}
+         * @return {DummyFindByIdAndRemoveQuery}
          */
         findByIdAndRemove: function(id, callback) {
             var query = new DummyFindByIdAndRemoveQuery(this, id);
@@ -211,7 +211,7 @@ require('bugpack').context("*", function(bugpack) {
         /**
          * @param {Object} queryParams
          * @param {function(Error, Object)} callback
-         * @returns {DummyFindOneQuery}
+         * @return {DummyFindOneQuery}
          */
         findOne: function(queryParams, callback) {
             var query = new DummyFindOneQuery(this, queryParams);
@@ -256,7 +256,7 @@ require('bugpack').context("*", function(bugpack) {
         /**
          * @param {Object} queryParams
          * @param {function(Error, Object)} callback
-         * @returns {DummyRemoveQuery}
+         * @return {DummyRemoveQuery}
          */
         remove: function(queryParams, callback) {
             var query = new DummyRemoveQuery(this, queryParams);
