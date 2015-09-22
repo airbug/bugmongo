@@ -190,13 +190,13 @@ require('bugpack').context("*", function(bugpack) {
             var setObject = updateObject["$set"];
             if (setObject) {
                 ObjectUtil.forIn(setObject, function(propertyName, propertyValue) {
-                    ObjectUtil.setProperty(dbObject, propertyName, propertyValue);
+                    ObjectUtil.setNestedProperty(dbObject, propertyName, propertyValue);
                 });
             }
             var addToSetObject = updateObject["$addToSet"];
             if (addToSetObject) {
                 ObjectUtil.forIn(addToSetObject, function(propertyName, setUpdateObject) {
-                    var objectValue = ObjectUtil.findProperty(dbObject, propertyName);
+                    var objectValue = ObjectUtil.getOwnNestedProperty(dbObject, propertyName);
                     if (TypeUtil.isArray(objectValue)) {
                         if (TypeUtil.isArray(setUpdateObject.$each)) {
                             setUpdateObject.$each.forEach(function(setValue) {
@@ -221,10 +221,10 @@ require('bugpack').context("*", function(bugpack) {
             var incObject = updateObject["$inc"];
             if (incObject) {
                 ObjectUtil.forIn(incObject, function(propertyName, incValue) {
-                    var objectValue = ObjectUtil.findProperty(dbObject, propertyName);
+                    var objectValue = ObjectUtil.getOwnNestedProperty(dbObject, propertyName);
                     if (TypeUtil.isNumber(objectValue)) {
                         objectValue += incValue;
-                        ObjectUtil.setProperty(dbObject, propertyName, objectValue);
+                        ObjectUtil.setNestedProperty(dbObject, propertyName, objectValue);
                     } else {
 
                         //TODO BRN: Add type checks
